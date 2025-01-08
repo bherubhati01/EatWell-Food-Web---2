@@ -16,7 +16,7 @@ function Navbar({ setShowLogin }) {
             <Link to="EatWell-Food-Web---2"> <img src={assets.logo} alt="" className='logo' /></Link>
             <ul className="nav-menu">
                 <Link to="EatWell-Food-Web---2" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
-                <a href='/EatWell-Food-Web---2#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
+                <a href='/#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
                 <a href='#app-download' onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>Mobile-App</a>
                 <a href='#footer' onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact Us</a>
             </ul>
