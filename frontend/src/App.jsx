@@ -19,8 +19,8 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path='/EatWell-Food-Web---2' element={<Home />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/placeorder' element={<PlaceOrder />} />
+          <Route path='/EatWell-Food-Web---2/cart' element={<Cart />} />
+          <Route path='/EatWell-Food-Web---2/order' element={<PlaceOrder />} />
         </Routes>
       </div>
       <Footer />
