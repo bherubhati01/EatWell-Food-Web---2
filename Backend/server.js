@@ -2,6 +2,8 @@ import express from "express"
 import cors from "cors"
 import { connectDB } from "./config/db.js";
 import foodRooter from "./routes/foodRoutes.js";
+import UserRouter from "./routes/userRouter.js";
+import 'dotenv/config.js'
 
 
 //app config
@@ -18,11 +20,12 @@ connectDB();
 //API end point
 app.use("/api/food", foodRooter)
 app.use("/images", express.static("uploads"))
+app.use("/api/user", UserRouter)
 
 
 
 app.get("/", (req, res)=>{
-    res.send("Hello")
+    res.send("Api Working....")
 })
 // mongodb+srv://bheru151515:Z65UPb9EpjGoebg4@cluster0.hu4s9.mongodb.net/?
 app.listen(port, ()=>{
