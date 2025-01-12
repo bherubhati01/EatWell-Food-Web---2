@@ -1,12 +1,21 @@
+/* eslint-disable react/prop-types */
 
 import { useContext } from 'react'
 import './Cart.css'
 import { StoreContext } from '../../Context/StoreContext'
 import { useNavigate } from 'react-router-dom'
 
-function Cart() {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext)
+function Cart({ setShowLogin }) {
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, token } = useContext(StoreContext)
   const navigate = useNavigate();
+  const handleCheckoutBtn = () => {
+    if (token) {
+      navigate("/order");
+    } else {
+      setShowLogin(true);
+    }
+  }
+
   return (
     <div className='cart'>
       <div className="cart-items">
@@ -25,7 +34,7 @@ function Cart() {
             return (
               <div key={index}>
                 <div key={index} className="cart-items-title cart-items-item">
-                  <img src={url+ "/images/"+item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
@@ -59,8 +68,9 @@ function Cart() {
           </div>
           {
             getTotalCartAmount() === 0
-              ? <button disabled style={{backgroundColor : "gray"}}>PROCEED TO CHECKOUT</button>
-              : <button onClick={() => navigate("/order")}>PROCEED TO CHECKOUT</button>
+              ? <button disabled style={{ backgroundColor: "gray" }}>PROCEED TO CHECKOUT</button>
+              : <button onClick={handleCheckoutBtn}>PROCEED TO CHECKOUT</button>
+              // : <button onClick={() => navigate("/order")}>PROCEED TO CHECKOUT</button>
           }
         </div>
         <div className="cart-promocode">

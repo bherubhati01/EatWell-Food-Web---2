@@ -76,7 +76,7 @@ function PlaceOrder() {
           <input required onChange={onChangeHandler} value={data.state} name='state' type="text" placeholder='State' />
         </div>
         <div className="multi-fields">
-          <input required onChange={onChangeHandler} value={data.zipCode} name='zipCode' type="text" placeholder='Zip/Pin Code' />
+          <input required onChange={onChangeHandler} value={data.zipCode} name='zipCode' type="number" placeholder='Zip/Pin Code' />
           <input required onChange={onChangeHandler} value={data.country} name='country' type="text" placeholder='Country' />
         </div>
         <input required onChange={onChangeHandler} value={data.phone} name='phone' type="number" placeholder='Phone Number' />
