@@ -9,6 +9,8 @@ import Cart from './pages/Cart/Cart.jsx'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import LoginPop from './components/LoginPopup/LoginPopup.jsx'
+import Verify from './pages/Verify/Verify.jsx'
+import MyOrders from './pages/MyOrders/MyOrders.jsx'
 
 const App = () => {
   const[showLogin , setShowLogin] = useState(false)
@@ -18,9 +20,11 @@ const App = () => {
       <div className='App'>
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
-          <Route path='/EatWell-Food-Web---2' element={<Home />} />
-          <Route path='/EatWell-Food-Web---2/cart' element={<Cart />} />
-          <Route path='/EatWell-Food-Web---2/order' element={<PlaceOrder />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/order' element={<PlaceOrder />} />
+          <Route path='/verify' element={<Verify />} />
+          <Route path='/myorder' element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />
