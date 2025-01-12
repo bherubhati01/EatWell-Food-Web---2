@@ -140,3 +140,9 @@ li{
         display: none;
     }
 }
+
+@media (max-width : 420px) {
+    .navbar-right .search{
+        display: none;
+    }
+}

@@ -58,6 +58,7 @@ function PlaceOrder() {
     } else if (getTotalCartAmount === 0) {
       nevigate('/cart')
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
   return (
