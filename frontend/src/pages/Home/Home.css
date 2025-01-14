@@ -1,0 +1,13 @@
+.flot-Cart{
+    position: fixed;
+    right: 12vw;
+    bottom: 6vw;
+    background-color: tomato;
+    padding: 15px;
+    border-radius: 50% 20%;
+    
+}
+
+.flot-Cart img{
+    width: 32px;
+}
