@@ -4,14 +4,15 @@ import { useContext } from 'react';
 import './FoodDisplay.css'
 import { StoreContext } from '../../Context/StoreContext';
 import FoodItem from '../FoodItem/FoodItem';
+import Verify from '../../pages/Verify/Verify.jsx'
 
 function FoodDisplay({ category }) {
-    const {url} =  useContext(StoreContext)
-    const { food_list } = useContext(StoreContext)
+    const {url , food_list } =  useContext(StoreContext)
 
     return (
         <div className='food-display' id="food-display">
             <h2>Top Dishes near you</h2>
+                {food_list.length === 0 ? <Verify/> : ""}
             <div className="food-display-item">
                 {food_list.map((item, index) => {
                     if (category==="All" || category === item.category){
