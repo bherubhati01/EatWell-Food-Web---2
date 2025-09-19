@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import Bugsnag from '@bugsnag/js'
 import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 // import './index.css'
@@ -14,6 +15,13 @@ import MyOrders from './pages/MyOrders/MyOrders.jsx'
 
 const App = () => {
   const[showLogin , setShowLogin] = useState(false)
+  
+  // Test Bugsnag integration
+  useEffect(() => {
+    Bugsnag.notify(new Error('Test error - Bugsnag integration verification'))
+    console.log('Bugsnag test error sent!')
+  }, [])
+
   return (
     <>
       {showLogin && <LoginPop setShowLogin={setShowLogin}/>}
