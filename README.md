@@ -13,4 +13,4 @@ EatWell is a full-stack food website built using the MERN stack (MongoDB, Expres
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - Tools: Git, npm/yarn
----------------
+-----
